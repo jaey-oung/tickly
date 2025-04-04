@@ -10,11 +10,13 @@ function App() {
         .catch(err => console.log(err))
   }, []);
 
-  return (
-      <div>
-        받아온 값 : {data}
-      </div>
-  );
+    return (
+        <div className="flex justify-center items-center h-screen bg-gray-100">
+            <div className="text-2xl font-bold text-blue-600">
+                받아온 값: {data}
+            </div>
+        </div>
+    );
 }
 
 export default App;
