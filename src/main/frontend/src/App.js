@@ -36,12 +36,71 @@ function App() {
             {/* 메뉴 버튼 6개 */}
             {menuOpen && (
                 <div>
-                    <button>타이머 설정</button>
-                    <button>타이머 리스트 보기</button>
-                    <button>로그인 / 회원가입</button>
-                    <button>환경설정</button>
-                    <button>알림 기록 보기</button>
-                    <button>도움말 / 소개</button>
+                    {/* 12시 방향 */}
+                    <button
+                        className="
+                            absolute
+                            top-1/4 left-1/2
+                            transform -translate-x-1/2
+                        "
+                    >
+                        타이머 설정
+                    </button>
+
+                    {/* 2시 방향 */}
+                    <button
+                        className="
+                            absolute
+                            top-1/3 left-2/3
+                            transform -translate-x-1/2
+                        "
+                    >
+                        타이머 리스트 보기
+                    </button>
+
+                    {/* 4시 방향 */}
+                    <button
+                        className="
+                            absolute
+                            top-2/3 left-2/3
+                            transform -translate-x-1/2
+                        "
+                    >
+                        로그인 / 회원가입
+                    </button>
+
+                    {/* 6시 방향 */}
+                    <button
+                        className="
+                            absolute
+                            top-3/4 left-1/2
+                            transform -translate-x-1/2
+                        "
+                    >
+                        알림 기록 보기
+                    </button>
+
+                    {/* 8시 방향 */}
+                    <button
+                        className="
+                            absolute
+                            top-2/3 left-1/3
+                            transform -translate-x-1/2
+                        "
+                    >
+                        도움말 / 소개
+                    </button>
+
+                    {/* 10시 방향 */}
+                    <button
+                        className="
+                            absolute
+                            top-1/3 left-1/3
+                            transform -translate-x-1/2
+                        "
+                    >
+                        환경설정
+                    </button>
                 </div>
             )}
         </div>
