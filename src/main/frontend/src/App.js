@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
 import MenuButton from './components/MenuButton';
+import LoginForm from './components/LoginForm';
 
 function App() {
     // 메뉴 열림 상태를 관리 (true: 열림, false: 닫힘)
     const [menuOpen, setMenuOpen] = useState(false);
+    // 로그인 폼 열림 상태를 관리 (true: 열림, false: 닫힘)
+    const [showLogin, setShowLogin] = useState(false);
 
     // + 버튼 클릭 시 메뉴 열림/닫힘 토글
     const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -21,22 +24,24 @@ function App() {
         >
 
             {/* 중앙 + 버튼 */}
-            <button
-                onClick={toggleMenu}
-                className="
-                    flex items-center justify-center
-                    w-40 h-40
-                    bg-blue-500 text-white
-                    rounded-full shadow-lg
-                    hover:scale-110
-                    transition-all duration-300
-                "
-            >
-                <Plus size={28} strokeWidth={2.5} />
-            </button>
+            {!showLogin && (
+                <button
+                    onClick={toggleMenu}
+                    className="
+                        flex items-center justify-center
+                        w-40 h-40
+                        bg-blue-500 text-white
+                        rounded-full shadow-lg
+                        hover:scale-110
+                        transition-all duration-300
+                    "
+                >
+                    <Plus size={28} strokeWidth={2.5} />
+                </button>
+            )}
 
             {/* 메뉴 버튼 6개 */}
-            {menuOpen && (
+            {!showLogin && menuOpen && (
                 <>
                     {/* 12시 방향 */}
                     <MenuButton
@@ -57,6 +62,7 @@ function App() {
                         label="로그인 / 회원가입"
                         positionClass="top-[66%] left-[66%]"
                         colorClass="bg-red-400"
+                        onClick={() => setShowLogin(true)}
                     />
 
                     {/* 6시 방향 */}
@@ -80,6 +86,9 @@ function App() {
                         colorClass="bg-teal-500"
                     />
                 </>
+            )}
+            {showLogin && (
+                <LoginForm onSwitch={() => setShowLogin(false)} />
             )}
         </div>
     );

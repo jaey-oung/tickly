@@ -1,8 +1,9 @@
 import React from 'react';
 
-function MenuButton({ label, positionClass, colorClass }) {
+function MenuButton({ onClick, positionClass, colorClass, label }) {
     return (
         <button
+            onClick={onClick}
             className={`
                 absolute
                 ${positionClass}
